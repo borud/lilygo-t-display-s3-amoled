@@ -8,6 +8,7 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
+#include "lvgl.h"
 
 extern "C" void app_main(void)
 {
@@ -23,6 +24,8 @@ extern "C" void app_main(void)
 
 	rm67162_init(); // amoled lcd initialization
 	lcd_setRotation(3);
+
+	lv_init();
 
 	lcd_fill(0, 0, 536, 240, 0x1111);
 }
